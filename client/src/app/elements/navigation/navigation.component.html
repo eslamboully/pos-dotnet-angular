@@ -1,0 +1,70 @@
+<div class="deznav">
+    <div class="deznav-scroll" [perfectScrollbar]>
+        <ul class="metismenu" id="menu" metis-menu>
+            <li class="{{(currentHref == '/dashboard') ? 'mm-active' : ''}}">
+                <a [routerLink]="['/dashboard']" class="ai-icon {{(currentHref == '/dashboard') ? 'mm-active' : ''}}" aria-expanded="false">
+                    <i class="flaticon-381-home"></i>
+                    <span class="nav-text">{{ 'dashboard' | translate }}</span>
+                </a>
+            </li>
+           
+            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-user-9"></i>
+                    <span class="nav-text">{{ 'users' | translate }}</span>
+                </a>
+                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
+                    <li>
+                        <a [routerLink]="['/dashboard/users']" class="{{(currentHref == '/dashboard/users') ? 'mm-active' : ''}}">
+                            {{ 'users' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/dashboard/users/add']" class="{{(currentHref == '/dashboard/users/add') ? 'mm-active' : ''}}">
+                            {{ 'add_new' | translate }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-division"></i>
+                    <span class="nav-text">{{ 'category' | translate }}</span>
+                </a>
+                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
+                    <li>
+                        <a [routerLink]="['/dashboard/categories']" class="{{(currentHref == '/dashboard/categories') ? 'mm-active' : ''}}">
+                            {{ 'category' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/dashboard/categories/add']" class="{{(currentHref == '/dashboard/categories/add') ? 'mm-active' : ''}}">
+                            {{ 'add_new' | translate }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-resume"></i>
+                    <span class="nav-text">{{ 'product' | translate }}</span>
+                </a>
+                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
+                    <li>
+                        <a [routerLink]="['/dashboard/products']" class="{{(currentHref == '/dashboard/products') ? 'mm-active' : ''}}">
+                            {{ 'product' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/dashboard/products/add']" class="{{(currentHref == '/dashboard/products/add') ? 'mm-active' : ''}}">
+                            {{ 'add_new' | translate }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>

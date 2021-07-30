@@ -1,0 +1,51 @@
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body">
+	<div class="container-fluid">
+		<div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>{{ 'hi_welcome_back' | translate }}!</h4>
+                    <p class="mb-0">{{ 'your_business_dashboard' | translate }} ({{ 'categories_table' | translate }})</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/dashboard">{{ 'home' | translate }}</a></li>
+                    <li class="breadcrumb-item"><a routerLink="/dashboard/categories">{{ 'categories' | translate }}</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ 'add_new' | translate }}</a></li>
+                </ol>
+            </div>
+        </div>
+		<div class="row">
+			<div class="col-xl-12 col-lg-12">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">{{ 'categories' | translate }} {{ 'add_new' | translate }}</h4>
+					</div>
+					<div class="card-body">
+						<div class="basic-form">
+							<form (ngSubmit)="storeCategory()">  
+                                <mat-tab-group mat-align-tabs="start">
+                                    <mat-tab label="{{ item.locale | translate }}" *ngFor="let item of transoptions.languages;let i = index">
+                                        <div class="form-group m-3">
+                                            <input type="text" name="{{ item.locale }}[name]" 
+                                            [(ngModel)]="model.categoryTranslations[i].name" 
+                                            class="form-control input-default " 
+                                            placeholder="{{ 'name' | translate }} ({{ item.locale }})">                               
+                                        </div>
+                                    </mat-tab>
+                                </mat-tab-group>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>{{ 'add_new' | translate }}</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--**********************************
+	Content body end
+***********************************-->

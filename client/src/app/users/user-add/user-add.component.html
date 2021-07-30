@@ -1,0 +1,55 @@
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body">
+	<div class="container-fluid">
+		<div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>{{ 'hi_welcome_back' | translate }}!</h4>
+                    <p class="mb-0">{{ 'your_business_dashboard' | translate }} ({{ 'users_table' | translate }})</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/dashboard">{{ 'home' | translate }}</a></li>
+                    <li class="breadcrumb-item"><a routerLink="/dashboard/users">{{ 'users' | translate }}</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ 'add_new' | translate }}</a></li>
+                </ol>
+            </div>
+        </div>
+		<div class="row">
+			<div class="col-xl-12 col-lg-12">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">{{ 'users' | translate }} {{ 'add_new' | translate }}</h4>
+					</div>
+					<div class="card-body">
+						<div class="basic-form">
+							<form (ngSubmit)="storeUser()">
+								<div class="row">
+                                    <div class="col-6 form-group">
+                                        <input type="text" [(ngModel)]="model.firstname" name="firstname" class="form-control input-default " placeholder="{{ 'firstname' | translate }}">
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <input type="text" [(ngModel)]="model.lastname" name="lastname" class="form-control input-default " placeholder="{{ 'lastname' | translate }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+									<input type="email" name="email" [(ngModel)]="model.email" class="form-control input-default " placeholder="{{ 'email_address' | translate }}">
+								</div>
+                                <div class="form-group">
+									<input type="password" name="password" [(ngModel)]="model.password" class="form-control input-default " placeholder="{{ 'password' | translate }}">
+								</div>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>{{ 'add_new' | translate }}</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--**********************************
+	Content body end
+***********************************-->
